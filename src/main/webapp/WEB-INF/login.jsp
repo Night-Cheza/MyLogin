@@ -1,7 +1,7 @@
 <%-- 
-    Document   : login
-    Created on : 2-Feb-2022, 12:47:32 PM
-    Author     : Ivan&Leila
+    Document   : login page
+    Created on : 2-Feb-2022
+    Author     : Leila Nalivkina, Nick Hemnett
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -16,18 +16,18 @@
 		
 		<form action = "login" method = "post">
 			<p>
-				<label for =" "username">Username</label>
-				<input type =" "text" name = "username" id = "username" required>
+				<label for ="username"><strong>Username:</strong></label>
+				<input type ="text" name = "username" id = "username" required>
 			</p>
 			
 			<p>
-				<label for =" "password">Password</label>
-				<input type =" "password" name = "password" id = "password" required>
+				<label for ="password"><strong>Password:<strong></label>
+				<input type ="password" name = "password" id = "password" required>
 			</p>
 			
 			<button type = "submit">Log in</button>
 		</form>
 		
-		<p>${message}}
+		<p>${message}
     </body>
 </html>
