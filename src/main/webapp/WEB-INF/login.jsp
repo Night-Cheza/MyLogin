@@ -17,17 +17,17 @@
 		<form action = "login" method = "post">
 			<p>
 				<label for ="username"><strong>Username:</strong></label>
-				<input type ="text" name = "username" id = "username" required>
+				<input type ="text" name = "username" id = "username" value = "${username}" required>
 			</p>
 			
 			<p>
-				<label for ="password"><strong>Password:<strong></label>
+				<label for ="password"><strong>Password:</strong></label>
 				<input type ="password" name = "password" id = "password" required>
 			</p>
 			
 			<button type = "submit">Log in</button>
 		</form>
 		
-		<p>${message}
+		<p style = "color: orangered;">${message} </p>
     </body>
 </html>

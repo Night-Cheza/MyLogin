@@ -4,7 +4,7 @@ import java.io.Serializable;
 
 /**
  *
- * @author Ivan&Leila
+ * @author Leila Nalivkina, Nick Hemnett
  */
 public class User implements Serializable {
 	private String username;
