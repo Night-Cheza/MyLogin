@@ -4,16 +4,16 @@ import ca.sait.login.models.User;
 import ca.sait.login.services.AccountService;
 import java.io.IOException;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
+//import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
  * @author Leila Nalivkina, Nick Hemnett
  */
-@WebServlet(name = "LoginServlet", urlPatterns = {"/login"})
 public class LoginServlet extends HttpServlet {
 
 	/**
@@ -26,11 +26,22 @@ public class LoginServlet extends HttpServlet {
 	 */
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String query = request.getQueryString();
+		HttpSession session =  request.getSession();
 
-		if(query != null && query.contains("logout")) {
-			request.setAttribute("message", "You have successfully logged out");
+		if (session.getAttribute("username") != null) {
+			String query = request.getQueryString();
+
+			if(query != null && query.contains("logout")) {
+				session.invalidate();
+
+				request.setAttribute("message", "You have successfully logged out");
+			} else {
+				//to redirect session to home page
+				response.sendRedirect("home");
+				return;
+			}
 		}
+
 		getServletContext().getRequestDispatcher("/WEB-INF/login.jsp").forward(request, response);
 	}
 
