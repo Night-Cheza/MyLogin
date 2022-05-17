@@ -1,4 +1,3 @@
 # MyLogin
-Lab 4 for Web app course at SAIT, Calgary
 
-The application has log in and log out functionality
+A simple web app with function of logging in and logging out utilizing Http session and authentication
